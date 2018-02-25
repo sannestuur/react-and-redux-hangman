@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import hangman from './hangman.jpg';
+import Form from './components/Form';
+import GuessedLetters from './components/GuessedLetters.js'
 
 class App extends Component {
   render() {
-    return (
+    return [
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App">Hangman!</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <img src={hangman} alt="hangman"/>
       </div>
-    );
+      <div className="GuessedLetters">
+        <GuessedLetters />
+        <h2>Take a guess:</h2>
+        <Form />
+      </div>
+    ];
   }
 }
 
