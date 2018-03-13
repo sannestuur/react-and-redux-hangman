@@ -1,18 +1,21 @@
 import { ADD_GUESSED_LETTER } from "../actions/addguessedletter";
 
 const initialState = {
-  guessed_letters: [],
-  number_of_guesses: 0,
-  target_word: "kittens"
+  guessedLetters: [],
+  numberOfGuesses: 0,
+  targetWord: "kittens"
 };
 
 export default function (state = initialState, action) {
 switch (action.type){
   case ADD_GUESSED_LETTER:
-     state.guessed_letters = state.guessed_letters.concat(action.payload);
-     state.number_of_guesses++;
-    return state;
-    // const guesses = Object.assign({}, state);
+    // return {...state,
+    //     guessedLetters: state.guessedLetters.concat(action.payload)
+    //   }
+    let guesses = Object.assign({}, state);
+     guesses.guessedLetters = state.guessedLetters.concat(action.payload);
+     guesses.numberOfGuesses = state.numberOfGuesses++;
+     return guesses;
   //   const guessed_letter = guesses.find(
   //   i => i === action.payload.guessed_letter
   //   );
