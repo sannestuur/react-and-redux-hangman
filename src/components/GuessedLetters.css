@@ -1,0 +1,13 @@
+.GuessedLetters {
+  align: center;
+  text-align: center;
+  width: 400px;
+  height: 40px;
+  margin: 30px auto;
+  padding: 0;
+  box-shadow: 1px 1px 5px rgba(0,0,0, 0.2);
+  font-size: 30px;
+}
+
+.p {
+}

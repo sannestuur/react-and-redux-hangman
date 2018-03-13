@@ -1,12 +1,27 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
+import "./GuessedLetters.css";
 
-const mapStateToProps = state => {
-  return { guessed_letters: state.guessed_letters };
-};
+export class GuessedLetters extends Component {
+  render() {
+    return (
+      <div className="GuessedLetters">
+        <p> _ _ _ _ _ </p>
+      </div>
+    );
+  }
+}
 
-const Array_of_guesses = guessed_letters;
+//insert in div:
+// <p>{this.props.GuessedLetters} </p>
 
-const Guessedletters = connect(mapStateToProps)(Array_of_guesses);
 
-export default GuessedLetters;
+// const mapStateToProps = state => {
+//   return { guessed_letters: state.guessed_letters };
+// };
+//
+// const Array_of_guesses = guessed_letters;
+//
+// const Guessedletters = connect(mapStateToProps)(Array_of_guesses);
+//
+export default connect()(GuessedLetters);

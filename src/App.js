@@ -9,11 +9,11 @@ class App extends Component {
     return [
       <div className="App">
         <header className="App-header">
-          <h1 className="App">Hangman!</h1>
+          <span>
+          <h1 className="App">HANGMAN</h1>
+          </span>
         </header>
         <img src={hangman} alt="hangman"/>
-      </div>
-      <div className="GuessedLetters">
         <GuessedLetters />
         <h2>Take a guess:</h2>
         <Form />
@@ -23,3 +23,11 @@ class App extends Component {
 }
 
 export default App;
+
+// Remove constants folder
+//change actions file
+//change store
+
+//simplify form: only on submit
+//change action file
+//change reducer
