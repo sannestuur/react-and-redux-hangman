@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./GuessedLetters.css";
 
-export class GuessedLetters extends Component {
+export class TargetWord extends Component {
   render() {
     return (
-      <div className="GuessedLetters">
-        <p> _ _ _ _ _ </p>
+      <div className="TargetWord">
+        <p> state.target_word </p>
       </div>
     );
   }
@@ -17,11 +16,11 @@ export class GuessedLetters extends Component {
 
 
 const mapStateToProps = state => {
-  return { guessed_letters: state.guessed_letters };
+  return { target_word: state.target_word };
 };
 //
 // const Array_of_guesses = guessed_letters;
 //
 // const Guessedletters = connect(mapStateToProps)(Array_of_guesses);
 //
-export default connect(mapStateToProps)(GuessedLetters);
+export default connect(mapStateToProps)(TargetWord);

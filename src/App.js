@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import hangman from './hangman.jpg';
 import Form from './components/Form';
-import GuessedLetters from './components/GuessedLetters.js'
+import GuessedLetters from './components/GuessedLetters'
 
 class App extends Component {
   render() {
