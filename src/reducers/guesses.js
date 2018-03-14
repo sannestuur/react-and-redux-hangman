@@ -1,33 +1,28 @@
 import { ADD_GUESSED_LETTER } from "../actions/addguessedletter";
 
 const initialState = {
-  guessedLetters: [],
+  targetWord: "kittens",
+  guessedSoFar: [],
   numberOfGuesses: 0,
-  targetWord: "kittens"
 };
 
-export default function (state = initialState, action) {
-switch (action.type){
-  case ADD_GUESSED_LETTER:
-    // return {...state,
-    //     guessedLetters: state.guessedLetters.concat(action.payload)
-    //   }
-    let guesses = Object.assign({}, state);
-     guesses.guessedLetters = state.guessedLetters.concat(action.payload);
-     guesses.numberOfGuesses = state.numberOfGuesses++;
-     return guesses;
-  //   const guessed_letter = guesses.find(
-  //   i => i === action.payload.guessed_letter
-  //   );
-  //   if (guessed_letter === undefined) {
-  //   guesses = guesses.concat({
-  //     action.payload.guessed_letter
-  //   });
-  //   } else {
-  //   return guesses;}
-  //   return guesses;
-  //   // return {...state, guessed_letters: [...state.guessed_letters, action.payload]};
-  default:
+export default function(state = initialState, action) {
+  switch (action.type) {
+    case ADD_GUESSED_LETTER:
+      let guesses = Object.assign({}, state);
+      guesses.numberOfGuesses = state.numberOfGuesses++;
+
+      let answer = guesses.targetWord.split("");
+      for (let i = 0; i < answer.length; i++) {
+        let index_in_targetWord = action.payload.indexOf(answer[i]);
+        if (index_in_targetWord === -1) {
+          guesses.guessedSoFar.splice(i, 0, "_ ");
+        } else guesses.guessedSoFar.splice(i, 0, answer[i]);
+      }
+
+      return guesses;
+
+    default:
       return state;
   }
-};
+}

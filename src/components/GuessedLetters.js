@@ -6,7 +6,7 @@ export class GuessedLetters extends Component {
   render() {
     return (
       <div className="GuessedLetters">
-        <p> { this.props.guesses.guessedLetters } </p>
+        <p> { this.props.guesses.guessedSoFar } </p>
       </div>
     );
   }
