@@ -1,6 +1,6 @@
-import guesses from './guesses';
+import guesses from './guesses'
 
 
 export default {
-  guesses,
+  guesses
 }

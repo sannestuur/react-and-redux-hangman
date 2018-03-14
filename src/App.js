@@ -23,11 +23,3 @@ class App extends Component {
 }
 
 export default App;
-
-// Remove constants folder
-//change actions file
-//change store
-
-//simplify form: only on submit
-//change action file
-//change reducer

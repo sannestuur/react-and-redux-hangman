@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./GuessedLetters.css";
+import { addGuessedLetter } from '../actions/addguessedletter'
+
 
 export class GuessedLetters extends Component {
+
+  componentWillMount() {
+    addGuessedLetter(this.props.guesses.guessedLetters)
+  }
+
   render() {
     return (
       <div className="GuessedLetters">
