@@ -9,24 +9,14 @@ class ConnectedForm extends Component {
 
   state = {}
 
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     guesses: []
-  //   };
-  //   this.handleChange = this.handleChange.bind(this);
-  //   this.handleSubmit = this.handleSubmit.bind(this);
-  // }
-
   handleSubmit = (event) => {
     event.preventDefault();
-    // const { guess } = this.state;
-    ///const id = uuidv1(); CHANGE TO DIFFERENT ID!
     this.props.addGuessedLetter(this.state.guess);
+    this.setState({ value: "" });
   }
 
   handleChange = (event) => {
-    this.setState({ [event.target.id]: event.target.value });
+    this.setState({ value: event.target.value });
   }
 
   render() {

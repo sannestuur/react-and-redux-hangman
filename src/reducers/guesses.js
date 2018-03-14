@@ -1,7 +1,10 @@
 import { ADD_GUESSED_LETTER } from "../actions/addguessedletter";
+import { words } from '../data/words';
+
+const randomWord = words[Math.floor(Math.random() * words.length)];
 
 const initialState = {
-  targetWord: "kittens",
+  targetWord: randomWord,
   guessedLetters: [],
   wrongGuesses: [],
 };
